@@ -38,6 +38,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_home_container_home_home_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/home/container/home/home.component */ "./src/app/modules/home/container/home/home.component.ts");
 /* harmony import */ var _modules_signin_container_signin_signin_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/signin/container/signin/signin.component */ "./src/app/modules/signin/container/signin/signin.component.ts");
 /* harmony import */ var _modules_register_container_register_register_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/register/container/register/register.component */ "./src/app/modules/register/container/register/register.component.ts");
+/* harmony import */ var _modules_post_job_container_post_job_post_job_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/post-job/container/post-job/post-job.component */ "./src/app/modules/post-job/container/post-job/post-job.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -49,11 +50,13 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: _modules_home_container_home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"], data: { title: 'Home' } },
     { path: 'signin', component: _modules_signin_container_signin_signin_component__WEBPACK_IMPORTED_MODULE_3__["SigninComponent"], data: { title: 'Signin' } },
-    { path: 'register', component: _modules_register_container_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"], data: { title: 'register' } }
+    { path: 'register', component: _modules_register_container_register_register_component__WEBPACK_IMPORTED_MODULE_4__["RegisterComponent"], data: { title: 'register' } },
+    { path: 'postjob', component: _modules_post_job_container_post_job_post_job_component__WEBPACK_IMPORTED_MODULE_5__["PostJobComponent"], data: { title: 'post job' } }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -184,7 +187,7 @@ var AppModule = /** @class */ (function () {
                 _app_app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
                 _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbModule"],
                 _app_ui_ui_module__WEBPACK_IMPORTED_MODULE_11__["UiModule"],
-                _app_modules__WEBPACK_IMPORTED_MODULE_12__["HomeModule"], _app_modules__WEBPACK_IMPORTED_MODULE_12__["SigninModule"], _app_modules__WEBPACK_IMPORTED_MODULE_12__["RegisterModule"],
+                _app_modules__WEBPACK_IMPORTED_MODULE_12__["HomeModule"], _app_modules__WEBPACK_IMPORTED_MODULE_12__["SigninModule"], _app_modules__WEBPACK_IMPORTED_MODULE_12__["RegisterModule"], _app_modules__WEBPACK_IMPORTED_MODULE_12__["PostJobModule"],
                 /**
                  * StoreModule.forRoot is imported once in the root module, accepting a reducer
                  * function or object map of reducer functions. If passed an object of
@@ -843,7 +846,7 @@ function reducer(state, action) {
 /*!**********************************!*\
   !*** ./src/app/modules/index.ts ***!
   \**********************************/
-/*! exports provided: HomeModule, SigninModule, RegisterModule */
+/*! exports provided: HomeModule, SigninModule, RegisterModule, PostJobModule */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -857,9 +860,224 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _register_register_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./register/register.module */ "./src/app/modules/register/register.module.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RegisterModule", function() { return _register_register_module__WEBPACK_IMPORTED_MODULE_2__["RegisterModule"]; });
 
+/* harmony import */ var _post_job_post_job_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post-job/post-job.module */ "./src/app/modules/post-job/post-job.module.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostJobModule", function() { return _post_job_post_job_module__WEBPACK_IMPORTED_MODULE_3__["PostJobModule"]; });
 
 
 
+
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/post-job/container/post-job/post-job.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/modules/post-job/container/post-job/post-job.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- signin-page -->\n<section class=\"clearfix job-bg user-page\">\n  <div class=\"container\">\n    <div class=\"row text-center\">\n      <!-- user-login -->\n      <div class=\"container-center col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3\">\n        <div class=\"user-account\">\n          <h2>Post Job</h2>\n           \n\n           \n        </div>\n         \n      </div><!-- user-login -->\n    </div><!-- row -->\n  </div><!-- container -->\n</section><!-- signin-page -->\n"
+
+/***/ }),
+
+/***/ "./src/app/modules/post-job/container/post-job/post-job.component.scss":
+/*!*****************************************************************************!*\
+  !*** ./src/app/modules/post-job/container/post-job/post-job.component.scss ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcG9zdC1qb2IvY29udGFpbmVyL3Bvc3Qtam9iL3Bvc3Qtam9iLmNvbXBvbmVudC5zY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/modules/post-job/container/post-job/post-job.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/modules/post-job/container/post-job/post-job.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: PostJobComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostJobComponent", function() { return PostJobComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PostJobComponent = /** @class */ (function () {
+    function PostJobComponent() {
+    }
+    PostJobComponent.prototype.ngOnInit = function () {
+    };
+    PostJobComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-post-job',
+            template: __webpack_require__(/*! ./post-job.component.html */ "./src/app/modules/post-job/container/post-job/post-job.component.html"),
+            styles: [__webpack_require__(/*! ./post-job.component.scss */ "./src/app/modules/post-job/container/post-job/post-job.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], PostJobComponent);
+    return PostJobComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/post-job/post-job.module.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/modules/post-job/post-job.module.ts ***!
+  \*****************************************************/
+/*! exports provided: PostJobModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostJobModule", function() { return PostJobModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _store_reducers_post_job_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/reducers/post-job.reducer */ "./src/app/modules/post-job/store/reducers/post-job.reducer.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _store_effects_post_job_effects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store/effects/post-job.effects */ "./src/app/modules/post-job/store/effects/post-job.effects.ts");
+/* harmony import */ var _container_post_job_post_job_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./container/post-job/post-job.component */ "./src/app/modules/post-job/container/post-job/post-job.component.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var PostJobModule = /** @class */ (function () {
+    function PostJobModule() {
+    }
+    PostJobModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            declarations: [_container_post_job_post_job_component__WEBPACK_IMPORTED_MODULE_6__["PostJobComponent"]],
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["StoreModule"].forFeature('postJob', _store_reducers_post_job_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"]),
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_4__["EffectsModule"].forFeature([_store_effects_post_job_effects__WEBPACK_IMPORTED_MODULE_5__["PostJobEffects"]])
+            ]
+        })
+    ], PostJobModule);
+    return PostJobModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/post-job/store/actions/post-job.actions.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/modules/post-job/store/actions/post-job.actions.ts ***!
+  \********************************************************************/
+/*! exports provided: PostJobActionTypes, LoadPostJobs */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostJobActionTypes", function() { return PostJobActionTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoadPostJobs", function() { return LoadPostJobs; });
+var PostJobActionTypes;
+(function (PostJobActionTypes) {
+    PostJobActionTypes["LoadPostJobs"] = "[PostJob] Load PostJobs";
+})(PostJobActionTypes || (PostJobActionTypes = {}));
+var LoadPostJobs = /** @class */ (function () {
+    function LoadPostJobs() {
+        this.type = PostJobActionTypes.LoadPostJobs;
+    }
+    return LoadPostJobs;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/post-job/store/effects/post-job.effects.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/modules/post-job/store/effects/post-job.effects.ts ***!
+  \********************************************************************/
+/*! exports provided: PostJobEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostJobEffects", function() { return PostJobEffects; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _actions_post_job_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/post-job.actions */ "./src/app/modules/post-job/store/actions/post-job.actions.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PostJobEffects = /** @class */ (function () {
+    function PostJobEffects(actions$) {
+        this.actions$ = actions$;
+        this.loadFoos$ = this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["ofType"])(_actions_post_job_actions__WEBPACK_IMPORTED_MODULE_2__["PostJobActionTypes"].LoadPostJobs));
+    }
+    __decorate([
+        Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Effect"])(),
+        __metadata("design:type", Object)
+    ], PostJobEffects.prototype, "loadFoos$", void 0);
+    PostJobEffects = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Actions"]])
+    ], PostJobEffects);
+    return PostJobEffects;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/post-job/store/reducers/post-job.reducer.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/modules/post-job/store/reducers/post-job.reducer.ts ***!
+  \*********************************************************************/
+/*! exports provided: initialState, reducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
+/* harmony import */ var _actions_post_job_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/post-job.actions */ "./src/app/modules/post-job/store/actions/post-job.actions.ts");
+
+var initialState = {};
+function reducer(state, action) {
+    if (state === void 0) { state = initialState; }
+    switch (action.type) {
+        case _actions_post_job_actions__WEBPACK_IMPORTED_MODULE_0__["PostJobActionTypes"].LoadPostJobs:
+            return state;
+        default:
+            return state;
+    }
+}
 
 
 /***/ }),
@@ -1514,7 +1732,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-default\">\r\n  <div class=\"container\">\r\n    <a class=\"navbar-brand\" routerLink=\"/home\">Logo</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar-collapse\" aria-controls=\"navbar-collapse\"\r\n      aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbar-collapse\">\r\n      <ul class=\"navbar-nav mr-auto\">\r\n        <li class=\"nav-item active\">\r\n          <a class=\"nav-link\" routerLink=\"/home\">Home <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link\" href=\"#\">Link</a>\r\n        </li>\r\n        <li class=\"nav-item dropdown\">\r\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n            aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            Dropdown\r\n          </a>\r\n          <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n            <a class=\"dropdown-item\" href=\"#\">Action</a>\r\n            <a class=\"dropdown-item\" href=\"#\">Another action</a>\r\n            <div class=\"dropdown-divider\"></div>\r\n            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n      <!-- nav-right -->\r\n      <div class=\"form-inline my-2 my-lg-0\">\r\n        <ul class=\"sign-in\">\r\n          <li><i class=\"fa fa-user\"></i></li>\r\n          <li><a routerLink=\"/signin\">Sign In</a></li>\r\n          <li><a routerLink=\"/register\">Register</a></li>\r\n        </ul><!-- sign-in -->\r\n\r\n        <a href=\"post.html\" class=\"btn\">Post Your Job</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</nav>\r\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-default\">\r\n  <div class=\"container\">\r\n    <a class=\"navbar-brand\" routerLink=\"/home\">Logo</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar-collapse\" aria-controls=\"navbar-collapse\"\r\n      aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbar-collapse\">\r\n      <ul class=\"navbar-nav mr-auto\">\r\n        <li class=\"nav-item active\">\r\n          <a class=\"nav-link\" routerLink=\"/home\">Home <span class=\"sr-only\">(current)</span></a>\r\n        </li>\r\n        <li class=\"nav-item\">\r\n          <a class=\"nav-link\" href=\"#\">Link</a>\r\n        </li>\r\n        <li class=\"nav-item dropdown\">\r\n          <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\"\r\n            aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            Dropdown\r\n          </a>\r\n          <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n            <a class=\"dropdown-item\" href=\"#\">Action</a>\r\n            <a class=\"dropdown-item\" href=\"#\">Another action</a>\r\n            <div class=\"dropdown-divider\"></div>\r\n            <a class=\"dropdown-item\" href=\"#\">Something else here</a>\r\n          </div>\r\n        </li>\r\n      </ul>\r\n      <!-- nav-right -->\r\n      <div class=\"form-inline my-2 my-lg-0\">\r\n        <ul class=\"sign-in\">\r\n          <li><i class=\"fa fa-user\"></i></li>\r\n          <li><a routerLink=\"/signin\">Sign In</a></li>\r\n          <li><a routerLink=\"/register\">Register</a></li>\r\n        </ul><!-- sign-in -->\r\n\r\n        <a routerLink=\"/postjob\" class=\"btn\">Post Your Job</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
